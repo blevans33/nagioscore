@@ -33,4 +33,6 @@ datetime=`date +%s`
 cmdline="[$datetime] PROCESS_SERVICE_CHECK_RESULT;$1;$2;$3;$4"
  
 # append the command to the end of the command file
-`$echocmd $cmdline >> $CommandFile`
+if [ -e "$CommandFile" ]; then
+  `$echocmd $cmdline >> $CommandFile`
+fi

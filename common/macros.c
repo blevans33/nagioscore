@@ -1221,8 +1221,6 @@ int grab_macrox_value_r(nagios_macros *mac, int macro_type, char *arg1, char *ar
 								problem = FALSE;
 							if(temp_service->problem_has_been_acknowledged == TRUE)
 								problem = FALSE;
-							if(temp_service->checks_enabled == FALSE)
-								problem = FALSE;
 							if(problem == TRUE)
 								services_warning_unhandled++;
 							services_warning++;
@@ -1235,8 +1233,6 @@ int grab_macrox_value_r(nagios_macros *mac, int macro_type, char *arg1, char *ar
 								problem = FALSE;
 							if(temp_service->problem_has_been_acknowledged == TRUE)
 								problem = FALSE;
-							if(temp_service->checks_enabled == FALSE)
-								problem = FALSE;
 							if(problem == TRUE)
 								services_unknown_unhandled++;
 							services_unknown++;
@@ -1248,8 +1244,6 @@ int grab_macrox_value_r(nagios_macros *mac, int macro_type, char *arg1, char *ar
 							if(temp_service->scheduled_downtime_depth > 0)
 								problem = FALSE;
 							if(temp_service->problem_has_been_acknowledged == TRUE)
-								problem = FALSE;
-							if(temp_service->checks_enabled == FALSE)
 								problem = FALSE;
 							if(problem == TRUE)
 								services_critical_unhandled++;
